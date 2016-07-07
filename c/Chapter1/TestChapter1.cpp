@@ -30,12 +30,25 @@ void Chapter1TestCase::testIsAnagram() {
     CPPUNIT_ASSERT(1 == isAnagram(string2));
 }
 
+void Chapter1TestCase::testReplaceSpaces() {
+    char string0[] = "Alessandro";
+    char string1[] = "Hello World!";
+    char string2[] = "     ";
+    char* s0 = replaceSpaces(string0);
+    char* s1 = replaceSpaces(string1);
+    char* s2 = replaceSpaces(string2);
+    CPPUNIT_ASSERT(strcmp("Alessandro", s0) == 0);
+    CPPUNIT_ASSERT(strcmp("Hello%20World!", s1) == 0);
+    CPPUNIT_ASSERT(strcmp("%20%20%20%20%20", s2) == 0);
+}
+
 CppUnit::Test *Chapter1TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter1TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testUniqueCharacters", &Chapter1TestCase::testUniqueCharacters));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testReverseString", &Chapter1TestCase::testReverseString));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRemoveDuplicates", &Chapter1TestCase::testRemoveDuplicates));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testIsAnagram", &Chapter1TestCase::testIsAnagram));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testReplaceSpaces", &Chapter1TestCase::testReplaceSpaces));
     return suiteOfTests;
 }
 

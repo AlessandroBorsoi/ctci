@@ -4,10 +4,7 @@
 #include <cppunit/TestSuite.h>
 #include <cppunit/TestCaller.h>
 #include <cppunit/ui/text/TestRunner.h>
-#include "Q1.1.h"
-#include "Q1.2.h"
-#include "Q1.3.h"
-#include "Q1.4.h"
+#include "Chapter1.h"
 
 class Chapter1TestCase : public CppUnit::TestCase {
 public:
@@ -18,6 +15,7 @@ public:
  void testReverseString();
  void testRemoveDuplicates();
  void testIsAnagram();
+ void testReplaceSpaces();
 
  static CppUnit::Test *suite ();
 };
