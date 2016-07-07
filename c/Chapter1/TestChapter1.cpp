@@ -42,6 +42,35 @@ void Chapter1TestCase::testReplaceSpaces() {
     CPPUNIT_ASSERT(strcmp("%20%20%20%20%20", s2) == 0);
 }
 
+void Chapter1TestCase::testRotateMatrix() {
+    /*
+    1   2   5   4   5
+    6   7   8   9   10
+    11  12  13  14  15
+    16  17  18  19  20
+    21  22  23  24  25
+
+    21  16  11  6   1
+    22  17  12  7   2
+    23  18  13  8   5
+    24  19  14  9   4
+    25  20  15  10  5
+    */
+    int matrix[N][N];
+    int k = 1;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            matrix[i][j] = k++;
+        }
+    }
+    rotateMatrix(matrix);
+    CPPUNIT_ASSERT_EQUAL(21, matrix[0][0]);
+    CPPUNIT_ASSERT_EQUAL(17, matrix[1][1]);
+    CPPUNIT_ASSERT_EQUAL(13, matrix[2][2]);
+    CPPUNIT_ASSERT_EQUAL(9, matrix[3][3]);
+    CPPUNIT_ASSERT_EQUAL(5, matrix[4][4]);
+}
+
 CppUnit::Test *Chapter1TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter1TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testUniqueCharacters", &Chapter1TestCase::testUniqueCharacters));
@@ -49,6 +78,7 @@ CppUnit::Test *Chapter1TestCase::suite () {
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRemoveDuplicates", &Chapter1TestCase::testRemoveDuplicates));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testIsAnagram", &Chapter1TestCase::testIsAnagram));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testReplaceSpaces", &Chapter1TestCase::testReplaceSpaces));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRotateMatrix", &Chapter1TestCase::testRotateMatrix));
     return suiteOfTests;
 }
 
