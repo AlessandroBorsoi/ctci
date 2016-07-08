@@ -52,7 +52,7 @@ void Chapter1TestCase::testRotateMatrix() {
 
     21  16  11  6   1
     22  17  12  7   2
-    23  18  13  8   5
+    23  18  13  8   3
     24  19  14  9   4
     25  20  15  10  5
     */
@@ -65,9 +65,29 @@ void Chapter1TestCase::testRotateMatrix() {
     }
     rotateMatrix(matrix);
     CPPUNIT_ASSERT_EQUAL(21, matrix[0][0]);
+    CPPUNIT_ASSERT_EQUAL(16, matrix[0][1]);
+    CPPUNIT_ASSERT_EQUAL(11, matrix[0][2]);
+    CPPUNIT_ASSERT_EQUAL(6, matrix[0][3]);
+    CPPUNIT_ASSERT_EQUAL(1, matrix[0][4]);
+    CPPUNIT_ASSERT_EQUAL(22, matrix[1][0]);
     CPPUNIT_ASSERT_EQUAL(17, matrix[1][1]);
+    CPPUNIT_ASSERT_EQUAL(12, matrix[1][2]);
+    CPPUNIT_ASSERT_EQUAL(7, matrix[1][3]);
+    CPPUNIT_ASSERT_EQUAL(2, matrix[1][4]);
+    CPPUNIT_ASSERT_EQUAL(23, matrix[2][0]);
+    CPPUNIT_ASSERT_EQUAL(18, matrix[2][1]);
     CPPUNIT_ASSERT_EQUAL(13, matrix[2][2]);
+    CPPUNIT_ASSERT_EQUAL(8, matrix[2][3]);
+    CPPUNIT_ASSERT_EQUAL(3, matrix[2][4]);
+    CPPUNIT_ASSERT_EQUAL(24, matrix[3][0]);
+    CPPUNIT_ASSERT_EQUAL(19, matrix[3][1]);
+    CPPUNIT_ASSERT_EQUAL(14, matrix[3][2]);
     CPPUNIT_ASSERT_EQUAL(9, matrix[3][3]);
+    CPPUNIT_ASSERT_EQUAL(4, matrix[3][4]);
+    CPPUNIT_ASSERT_EQUAL(25, matrix[4][0]);
+    CPPUNIT_ASSERT_EQUAL(20, matrix[4][1]);
+    CPPUNIT_ASSERT_EQUAL(15, matrix[4][2]);
+    CPPUNIT_ASSERT_EQUAL(10, matrix[4][3]);
     CPPUNIT_ASSERT_EQUAL(5, matrix[4][4]);
 }
 
