@@ -17,6 +17,7 @@ public:
     void testIsAnagram();
     void testReplaceSpaces();
     void testRotateMatrix();
+    void testMatrixZeros();
 
     static CppUnit::Test *suite ();
 };
