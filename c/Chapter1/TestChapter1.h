@@ -18,6 +18,7 @@ public:
     void testReplaceSpaces();
     void testRotateMatrix();
     void testMatrixZeros();
+    void testRotationString();
 
     static CppUnit::Test *suite ();
 };

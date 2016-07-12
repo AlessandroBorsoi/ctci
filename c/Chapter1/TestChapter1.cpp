@@ -131,6 +131,19 @@ void Chapter1TestCase::testMatrixZeros() {
     }
 }
 
+void Chapter1TestCase::testRotationString() {
+    char string[] = "waterbottle";
+    char rotation2[] = "erbottlewat";
+    char rotation3[] = "waterboTTle";
+    char sub[] = "ttle";
+    char nosub[] = "TTle";
+    CPPUNIT_ASSERT_EQUAL(1, isSubstring(string, sub));
+    CPPUNIT_ASSERT_EQUAL(0, isSubstring(string, nosub));
+    CPPUNIT_ASSERT_EQUAL(0, isSubstring("aBc", "abc"));
+    CPPUNIT_ASSERT_EQUAL(1, isRotationString(string, rotation2));
+    CPPUNIT_ASSERT_EQUAL(0, isRotationString(string, rotation3));
+}
+
 CppUnit::Test *Chapter1TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter1TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testUniqueCharacters", &Chapter1TestCase::testUniqueCharacters));
@@ -140,6 +153,7 @@ CppUnit::Test *Chapter1TestCase::suite () {
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testReplaceSpaces", &Chapter1TestCase::testReplaceSpaces));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRotateMatrix", &Chapter1TestCase::testRotateMatrix));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testMatrixZeros", &Chapter1TestCase::testMatrixZeros));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRotationString", &Chapter1TestCase::testRotationString));
     return suiteOfTests;
 }
 
