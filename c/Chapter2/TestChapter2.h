@@ -12,6 +12,7 @@ public:
     Chapter2TestCase(std::string name) : CppUnit::TestCase(name) {}
 
     void testRemoveUniques();
+    void testNthToLast();
 
     static CppUnit::Test *suite ();
 };

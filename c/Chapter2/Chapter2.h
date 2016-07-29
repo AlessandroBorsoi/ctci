@@ -8,3 +8,4 @@ typedef struct node_t {
 node* createList(int a[], int size);
 void removeDuplicates(node** head);
 int listCmp(node* listA, node* listB);
+int nthToLast(node* list, int nth);
