@@ -21,11 +21,20 @@ void Chapter1TestCase::testReverseString() {
 
 void Chapter1TestCase::testRemoveDuplicates() {
     char string1[] = "Alessandro";
-    char string2[] = "aaaaabbbbbccccc";
+    char string2[] = "aaaaa";
+    char string3[] = "aaaaabbbbbccccc";
+    char string4[] = "";
+    char string5[] = "abababa";
     removeDuplicates(string1);
     removeDuplicates(string2);
+    removeDuplicates(string3);
+    removeDuplicates(string4);
+    removeDuplicates(string5);
     CPPUNIT_ASSERT(strcmp("Alesandro", string1) == 0);
-    CPPUNIT_ASSERT(strcmp("abc", string2) == 0);
+    CPPUNIT_ASSERT(strcmp("a", string2) == 0);
+    CPPUNIT_ASSERT(strcmp("abc", string3) == 0);
+    CPPUNIT_ASSERT(strcmp("", string4) == 0);
+    CPPUNIT_ASSERT(strcmp("ab", string5) == 0);
 }
 
 void Chapter1TestCase::testIsAnagram() {
