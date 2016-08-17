@@ -12,6 +12,7 @@ public:
     Chapter1TestCase(std::string name) : CppUnit::TestCase(name) {}
 
     void testUniqueCharacters();
+    void testUniqueCharacters2();
     void testReverseString();
     void testRemoveDuplicates();
     void testIsAnagram();

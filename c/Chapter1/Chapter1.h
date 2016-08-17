@@ -4,6 +4,7 @@
 #define N 5
 
 int uniqueChars(const char string[]);
+int uniqueChars2(const char string[]);
 void reverseString(char string[]);
 int len(const char string[]);
 void removeDuplicates(char string[]);

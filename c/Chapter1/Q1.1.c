@@ -16,3 +16,13 @@ int uniqueChars(const char string[]) {
     }
     return UNIQUE;
 }
+
+int uniqueChars2(const char string[]) {
+   char char_set[256] = {0};
+   for (int i = 0; string[i] != '\0'; i++) {
+       char val = string[i];
+       if (char_set[val]) return NOT_UNIQUE;
+       char_set[val] = 1;
+   }
+   return UNIQUE;
+}

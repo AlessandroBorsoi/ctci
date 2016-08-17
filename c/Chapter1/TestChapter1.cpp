@@ -5,6 +5,11 @@ void Chapter1TestCase::testUniqueCharacters() {
     CPPUNIT_ASSERT(1 == uniqueChars("Mario"));
 }
 
+void Chapter1TestCase::testUniqueCharacters2() {
+    CPPUNIT_ASSERT(0 == uniqueChars("Alessandro"));
+    CPPUNIT_ASSERT(1 == uniqueChars("Mario"));
+}
+
 void Chapter1TestCase::testReverseString() {
     char string[] = "Alessandro";
     CPPUNIT_ASSERT_EQUAL(10, len(string));
@@ -147,6 +152,7 @@ void Chapter1TestCase::testRotationString() {
 CppUnit::Test *Chapter1TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter1TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testUniqueCharacters", &Chapter1TestCase::testUniqueCharacters));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testUniqueCharacters2", &Chapter1TestCase::testUniqueCharacters2));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testReverseString", &Chapter1TestCase::testReverseString));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRemoveDuplicates", &Chapter1TestCase::testRemoveDuplicates));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testIsAnagram", &Chapter1TestCase::testIsAnagram));
