@@ -19,6 +19,7 @@ public:
     void testReplaceSpaces();
     void testRotateMatrix();
     void testMatrixZeros();
+    void testMatrixZerosBetter();
     void testRotationString();
 
     static CppUnit::Test *suite ();

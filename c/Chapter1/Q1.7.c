@@ -44,3 +44,23 @@ void matrixZeros(int matrix[M][N]) {
         head = head->next;
     }
 }
+
+void matrixZerosBetter(int matrix[M][N]) {
+    int row[M] = {0};
+    int column[N] = {0};
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            if (matrix[i][j] == 0) {
+                row[i] = 1;
+                column[j] = 1;
+            }
+        }
+    }
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            if (row[i] == 1 || column[j] == 1) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+}

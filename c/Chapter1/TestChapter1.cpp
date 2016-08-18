@@ -146,6 +146,31 @@ void Chapter1TestCase::testMatrixZeros() {
     }
 }
 
+void Chapter1TestCase::testMatrixZerosBetter() {
+    int matrix[M][N];
+    int k = 1;
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            matrix[i][j] = k++;
+        }
+    }
+    matrix[2][0] = 0;
+    matrix[3][3] = 0;
+    matrixZerosBetter(matrix);
+    for (int i = 0; i < M; i++) {
+        CPPUNIT_ASSERT_EQUAL(0, matrix[i][0]);
+    }
+    for (int i = 0; i < M; i++) {
+        CPPUNIT_ASSERT_EQUAL(0, matrix[i][3]);
+    }
+    for (int j = 0; j < N; j++) {
+        CPPUNIT_ASSERT_EQUAL(0, matrix[2][j]);
+    }
+    for (int j = 0; j < N; j++) {
+        CPPUNIT_ASSERT_EQUAL(0, matrix[3][j]);
+    }
+}
+
 void Chapter1TestCase::testRotationString() {
     char string[] = "waterbottle";
     char rotation2[] = "erbottlewat";
@@ -169,6 +194,7 @@ CppUnit::Test *Chapter1TestCase::suite () {
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testReplaceSpaces", &Chapter1TestCase::testReplaceSpaces));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRotateMatrix", &Chapter1TestCase::testRotateMatrix));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testMatrixZeros", &Chapter1TestCase::testMatrixZeros));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testMatrixZerosBetter", &Chapter1TestCase::testMatrixZerosBetter));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter1TestCase>("testRotationString", &Chapter1TestCase::testRotationString));
     return suiteOfTests;
 }
