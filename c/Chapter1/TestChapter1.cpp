@@ -39,9 +39,10 @@ void Chapter1TestCase::testRemoveDuplicates() {
 
 void Chapter1TestCase::testIsAnagram() {
     char string1[] = "Alessandro";
-    char string2[] = "anna";
-    CPPUNIT_ASSERT(0 == isAnagram(string1));
-    CPPUNIT_ASSERT(1 == isAnagram(string2));
+    char string2[] = "alexander";
+    char string3[] = "oslaAnresd";
+    CPPUNIT_ASSERT(0 == isAnagram(string1, string2));
+    CPPUNIT_ASSERT(1 == isAnagram(string1, string3));
 }
 
 void Chapter1TestCase::testReplaceSpaces() {
