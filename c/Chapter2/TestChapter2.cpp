@@ -20,10 +20,20 @@ void Chapter2TestCase::testNthToLast() {
     CPPUNIT_ASSERT_EQUAL(1, element);
 }
 
+void Chapter2TestCase::testRemoveNode() {
+    int in[] = {1, 2, 3, 4, 5};
+    node* listIn = createList(in, 5);
+    removeNode(listIn->next->next);
+    int out[] = {1, 2, 4, 5};
+    node* listOut = createList(out, 4);
+    CPPUNIT_ASSERT_EQUAL(0, listCmp(listIn, listOut));
+}
+
 CppUnit::Test *Chapter2TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter2TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testRemoveUniques", &Chapter2TestCase::testRemoveUniques));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testNthToLast", &Chapter2TestCase::testNthToLast));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testRemoveNode", &Chapter2TestCase::testRemoveNode));
     return suiteOfTests;
 }
 

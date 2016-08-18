@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -g
 EXEC = tester
-OBJS = TestChapter2.o Q2.1.o Q2.2.o
+OBJS = TestChapter2.o Q2.1.o Q2.2.o Q2.3.o
 CPPUNIT = -L/usr/local/lib -lcppunit
 
 $(EXEC): $(OBJS)

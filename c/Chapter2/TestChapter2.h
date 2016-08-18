@@ -13,6 +13,7 @@ public:
 
     void testRemoveUniques();
     void testNthToLast();
+    void testRemoveNode();
 
     static CppUnit::Test *suite ();
 };
