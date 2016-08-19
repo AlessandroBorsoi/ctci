@@ -40,12 +40,28 @@ void Chapter2TestCase::testSumList() {
     CPPUNIT_ASSERT_EQUAL(0, listCmp(listSum, listC));
 }
 
+void Chapter2TestCase::testCircularList() {
+    /*
+    Input:  1->2->3->4->5->6->3
+    Output: 3
+    */
+    int in[] = {1, 2, 3, 4, 5, 6};
+    node* list = createList(in, 6);
+    node* walker = list;
+    while (walker->next != NULL) {
+        walker = walker->next;
+    }
+    walker->next = list->next->next;
+    CPPUNIT_ASSERT_EQUAL(3, circularList(list));
+}
+
 CppUnit::Test *Chapter2TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter2TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testRemoveUniques", &Chapter2TestCase::testRemoveUniques));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testNthToLast", &Chapter2TestCase::testNthToLast));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testRemoveNode", &Chapter2TestCase::testRemoveNode));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testSumList", &Chapter2TestCase::testSumList));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testCircularList", &Chapter2TestCase::testCircularList));
     return suiteOfTests;
 }
 

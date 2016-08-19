@@ -11,3 +11,4 @@ int listCmp(node* listA, node* listB);
 int nthToLast(node* list, int nth);
 void removeNode(node* element);
 node* sumList(node* listA, node* listB, int carry);
+int circularList(node* list);
