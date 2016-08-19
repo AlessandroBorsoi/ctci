@@ -29,11 +29,23 @@ void Chapter2TestCase::testRemoveNode() {
     CPPUNIT_ASSERT_EQUAL(0, listCmp(listIn, listOut));
 }
 
+void Chapter2TestCase::testSumList() {
+    int A[] = {3, 1, 5};
+    node* listA = createList(A, 3);
+    int B[] = {5, 9, 2};
+    node* listB = createList(B, 3);
+    int C[] = {8, 0, 8};
+    node* listC = createList(C, 3);
+    node* listSum = sumList(listA, listB, 0);
+    CPPUNIT_ASSERT_EQUAL(0, listCmp(listSum, listC));
+}
+
 CppUnit::Test *Chapter2TestCase::suite () {
     CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("Chapter2TestCase");
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testRemoveUniques", &Chapter2TestCase::testRemoveUniques));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testNthToLast", &Chapter2TestCase::testNthToLast));
     suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testRemoveNode", &Chapter2TestCase::testRemoveNode));
+    suiteOfTests->addTest(new CppUnit::TestCaller<Chapter2TestCase>("testSumList", &Chapter2TestCase::testSumList));
     return suiteOfTests;
 }
 

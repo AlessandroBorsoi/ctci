@@ -14,6 +14,7 @@ public:
     void testRemoveUniques();
     void testNthToLast();
     void testRemoveNode();
+    void testSumList();
 
     static CppUnit::Test *suite ();
 };
