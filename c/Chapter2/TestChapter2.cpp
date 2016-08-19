@@ -42,11 +42,11 @@ void Chapter2TestCase::testSumList() {
 
 void Chapter2TestCase::testCircularList() {
     /*
-    Input:  1->2->3->4->5->6->3
+    Input:  1->2->3->4->4->4->4->4->4->3
     Output: 3
     */
-    int in[] = {1, 2, 3, 4, 5, 6};
-    node* list = createList(in, 6);
+    int in[] = {1, 2, 3, 4, 4, 4, 4, 4, 4};
+    node* list = createList(in, 9);
     node* walker = list;
     while (walker->next != NULL) {
         walker = walker->next;

@@ -7,7 +7,7 @@ int circularList(node* list) {
     while (runner != NULL) {
         walker = walker->next;
         runner = runner->next->next;
-        if (walker->d == runner->d) break;
+        if (walker == runner) break;
     }
     if (runner == NULL) return 0;
     walker = list;
